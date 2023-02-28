@@ -48,7 +48,7 @@ const MovieInformation = () => {
     return (
       <Grid container className={classes.containerSpaceAround}>
 
-        <Grid item sm={12} lg={4}>
+        <Grid item sm={12} lg={4} >
           <img 
           src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
           className={classes.poster} 
@@ -69,7 +69,9 @@ const MovieInformation = () => {
                 {data.vote_average.toFixed(2)} / 10
               </Typography>
             </Box>
-            <Typography gutterBottom variant="h6" align="center">{data.runtime}min</Typography>
+            <Typography gutterBottom variant="h6" align="center">
+              {data.runtime} min | Language:{data.spoken_languages[0].name}
+            </Typography>
           </Grid>
           <Grid item className={classes.genresContainer}>
             {data.genres.map((genre) => (
