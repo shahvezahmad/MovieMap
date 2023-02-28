@@ -33,10 +33,21 @@ export const tmdbApi = createApi({
             }
     
             // Get popular movies by default
-            return `/movie/popular?page=${page}&api_key=${tmdbApiKey}`
+            return `/movie/popular?page=${page}&api_key=${tmdbApiKey}`;
 
             },
         }),
+
+        // Get Movie
+        getMovie: builder.query({
+            query: (id) => `/movie/${id}?append_to_response=videos,credits&api_key=${tmdbApiKey}`,
+        }),
+
+        // Get Recommendations
+        getRecommendations: builder.query({
+            query: ({ movie_id, list }) => `/movie/${movie_id}/${list}?api_key=${tmdbApiKey}`,
+        }),
+  
 
     }),
 });
@@ -44,4 +55,6 @@ export const tmdbApi = createApi({
 export const {
     useGetMoviesQuery,
     useGetGenresQuery,
+    useGetMovieQuery,
+    useGetRecommendationsQuery,
 } = tmdbApi;
