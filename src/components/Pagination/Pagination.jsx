@@ -4,16 +4,16 @@ import { Typography, Button } from '@mui/material';
 import useStyles from './styles';
 
 function Pagination({ currentPage, setPage, totalPages }) {
-  const classes = useStyles();
+    const classes = useStyles();
+    
+    if (totalPages === 0) return null;
 
-  const handlePrev = () => {
-    if (currentPage !== 1) { setPage((prevPage) => prevPage - 1); }
-  };
-  const handleNext = () => {
-    if (currentPage !== totalPages) { setPage((prevPage) => prevPage + 1); }
-  };
-
-  if (totalPages === 0) return null;
+    const handlePrev = () => {
+      if (currentPage !== 1) { setPage((prevPage) => prevPage - 1); }
+    };
+    const handleNext = () => {
+      if (currentPage !== totalPages) { setPage((prevPage) => prevPage + 1); }
+    };
 
   return (
     <div className={classes.container}>
