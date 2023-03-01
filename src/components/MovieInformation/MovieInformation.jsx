@@ -27,11 +27,11 @@ const MovieInformation = () => {
     const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
 
     useEffect(() => {
-      setIsMovieFavorited(!!favoriteMovies && !!favoriteMovies.results.find((movie) => movie.id === data.id));
+      setIsMovieFavorited(!!favoriteMovies && !!favoriteMovies.results && !!data && !!data.id && !!favoriteMovies.results.find((movie) => movie.id === data.id));
     }, [favoriteMovies, data]);
 
     useEffect(() => {
-      setIsMovieWatchlisted(!!watchlistMovies && !!watchlistMovies.results.find((movie) => movie.id === data.id));
+      setIsMovieWatchlisted(!!watchlistMovies && !!watchlistMovies.results &&!!data && !!data.id && !!watchlistMovies.results.find((movie) => movie.id === data.id));
     }, [watchlistMovies, data]);
 
     const addToFavorites = async () => {

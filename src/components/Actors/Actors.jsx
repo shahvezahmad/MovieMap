@@ -5,7 +5,7 @@ import { ArrowBack } from '@mui/icons-material';
 
 import useStyles from './styles';
 import { useGetActorQuery, useGetMoviesByActorIdQuery } from '../../services/TMDB';
-import { MovieList, Pagination } from '../index';
+import { MovieList } from '../index';
 
 const Actors = () => {
   const classes = useStyles();
@@ -56,7 +56,6 @@ const Actors = () => {
       <Box margin="2rem 0">
         <Typography variant="h2" gutterBottom align="center">Movies</Typography>
         {movies && <MovieList movies={movies} numberOfMovies={12} />}
-        <Pagination currentPage={page} setPage={setPage} totalPages={movies.total_pages} />
       </Box>
     </>
   );
