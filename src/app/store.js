@@ -1,3 +1,4 @@
+// sets up redux store for the application
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { tmdbApi } from '../services/TMDB';

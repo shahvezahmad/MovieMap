@@ -168,7 +168,7 @@ const MovieInformation = () => {
           open={open}
           onClose={() => setOpen(false)}
           >
-          {data.videos.results.length > 0 && (
+          { !!data && !!data.videos && data.videos.results.length > 0 && (
             <iframe
               autoPlay
               className={classes.video}
