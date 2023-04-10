@@ -8,13 +8,14 @@ import genreIcons from '../../assets/genres';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
+// sidebar categories
 const categories = [
     { label: 'Popular', value: 'popular' },
     { label: 'Top Rated', value: 'top_rated' },
     { label: 'Upcoming', value: 'upcoming' },
 ];
 
-
+// moviemap logos
 const redLogo = 'https://fontmeme.com/permalink/230301/03e801e5217f3cf2fc2be4f245639307.png';
 const blueLogo = 'https://fontmeme.com/permalink/230301/ddc202c58e1321c48b32af389e3880aa.png';
 
@@ -55,7 +56,6 @@ const Sidebar = ({ setMobileOpen}) => {
             <Divider/>
             <List>
                 <ListSubheader>Genre</ListSubheader>
-                
                 {isFetching? 
                     (<Box display="flex" justifyContent="center">
                     <CircularProgress />
