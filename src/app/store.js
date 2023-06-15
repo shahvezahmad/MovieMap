@@ -5,6 +5,7 @@ import { tmdbApi } from '../services/TMDB';
 import  genreOrCategoryReducer  from '../features/currentGenreOrCategory';
 import userReducer from '../features/auth';
 
+//store for state management
 const store = configureStore({
   reducer: {
     [tmdbApi.reducerPath]: tmdbApi.reducer,
@@ -16,5 +17,4 @@ const store = configureStore({
 });
 
 setupListeners(store.dispatch);
-
 export default store;
